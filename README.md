@@ -2,8 +2,6 @@
 
 An editable model of what building operators keep, and what a performance priced building automation vendor earns, for one site or an entire portfolio. It is built around one story: pilot, then verified value, then portfolio rollout.
 
-Open `index.html` in a browser, or use the hosted page. It stores nothing and sends no data anywhere.
-
 This is an independent prototype prepared by Tugce Simsek King as preparation for a conversation with Cosysense. It is not an official Cosysense tool, and it is not affiliated with or endorsed by Cosysense.
 
 ## What it does
