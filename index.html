@@ -1,4 +1,3 @@
-git add index.html
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,12 +11,101 @@ git add index.html
 .savings-dock{position:sticky;top:0;z-index:30;margin:0 0 22px;background:rgba(18,32,29,.96);color:#fff;border:1px solid rgba(255,255,255,.1);border-radius:15px;box-shadow:0 14px 34px rgba(18,32,29,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow:hidden}.savings-dock-inner{display:grid;grid-template-columns:minmax(240px,1.5fr) repeat(2,minmax(145px,.7fr));align-items:stretch}.dock-primary,.dock-secondary{padding:14px 18px}.dock-primary{display:flex;align-items:center;justify-content:space-between;gap:18px;min-width:0}.dock-label{font-size:.67rem;line-height:1.2;text-transform:uppercase;letter-spacing:.11em;font-weight:800;color:#aee4dc}.dock-value{font-family:var(--serif);font-size:clamp(1.75rem,3.2vw,2.45rem);line-height:1;white-space:nowrap}.dock-context{font-size:.72rem;color:#c7d5d1;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.dock-secondary{border-left:1px solid rgba(255,255,255,.13);display:flex;flex-direction:column;justify-content:center}.dock-secondary .k{font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:#9fb3ad;font-weight:700}.dock-secondary .v{font-family:var(--serif);font-size:1.25rem;line-height:1.1;margin-top:3px}.dock-note{padding:7px 18px;border-top:1px solid rgba(255,255,255,.1);font-size:.68rem;color:#9fb3ad;background:rgba(255,255,255,.025)}
 @media(max-width:950px){.layout{grid-template-columns:1fr}.sidebar{position:static;max-height:none}.stages{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}}@media(max-width:600px){.wrap{padding:24px 14px 50px}.row2,.row3,.settings-grid,.score-thresholds{grid-template-columns:1fr}.barrow{grid-template-columns:1fr 90px}.bartrack{grid-column:1/-1;order:3}.section,.hero{padding:19px}.toolbar{padding-top:16px}.savings-dock{margin-left:-4px;margin-right:-4px;border-radius:13px}.savings-dock-inner{grid-template-columns:1fr}.dock-primary{padding:12px 14px;gap:12px}.dock-value{font-size:1.75rem}.dock-context{font-size:.67rem}.dock-secondary,.dock-note{display:none}}
 @media print{.sidebar,.toolbar,.byline,.savings-dock{display:none}.layout{display:block}.wrap{max-width:none}.section,.hero{box-shadow:none;break-inside:avoid}}
+
+/* v1.5 visual skin: aligned with Cosysense's current public site without presenting this as an official tool. */
+:root{
+  --bg:#f8fbfa;
+  --panel:#ffffff;
+  --ink:#0b0f0e;
+  --muted:#60706a;
+  --rule:#dceae5;
+  --accent:#27e5ad;
+  --accent-deep:#08b987;
+  --accent-soft:#eafff7;
+  --gold:#f2a41f;
+  --gold-soft:#fff8e8;
+  --danger:#b43636;
+  --shadow:0 16px 42px rgba(15,35,29,.055);
+  --radius:20px;
+  --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --serif:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+body{
+  background:
+    radial-gradient(circle at 8% 0%,rgba(39,229,173,.09),transparent 27rem),
+    linear-gradient(180deg,#ffffff 0,#f8fbfa 32rem,#f8fbfa 100%);
+  color:var(--ink);
+}
+.wrap{max-width:1280px;padding:28px 24px 76px}
+header{position:relative;padding:8px 0 28px;border-bottom:1px solid #cfe8df}
+header:after{content:"";position:absolute;left:0;bottom:-1px;width:120px;height:3px;background:var(--accent);border-radius:999px}
+.brandline{display:flex;align-items:center;gap:10px;margin-bottom:22px;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+.brandword{font-weight:800;letter-spacing:.14em;color:#0a0d0c}
+.branddot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:14px 0 0 var(--accent);margin-right:14px}
+.brandcaption{color:var(--muted);font-weight:650}
+.eyebrow{display:inline-flex;align-items:center;width:max-content;padding:7px 11px;border:1px solid #9cf2d7;border-radius:999px;background:var(--accent-soft);font-size:.69rem;letter-spacing:.1em;color:#067e5d}
+h1{font-family:var(--sans);font-weight:650;font-size:clamp(2.8rem,6vw,5.4rem);line-height:.92;letter-spacing:-.058em;margin:14px 0 18px;max-width:900px}
+.lede{font-size:1.08rem;line-height:1.62;color:#3e4b47;max-width:790px}
+.byline{font-size:.79rem;color:#75827e;margin-top:14px}
+.toolbar{padding:20px 0 24px}
+.seg{box-shadow:none;border-color:#cfe2dc;background:#fff}
+.seg button{font-weight:650}
+.seg button.active{background:var(--accent);color:#07110d}
+.select,select,input{border-color:#cfe0da;background:#fff;border-radius:12px;transition:border-color .16s ease,box-shadow .16s ease,background .16s ease}
+.select:focus,select:focus,input:focus{outline:none;border-color:var(--accent-deep);box-shadow:0 0 0 3px rgba(39,229,173,.16)}
+.panel,.card,.section{border-color:#dce9e5;box-shadow:var(--shadow)}
+.group{padding:18px}
+.group h3{font-size:.93rem;font-weight:750;letter-spacing:-.01em}
+.assumption{background:var(--gold-soft);border-color:#e7c778}
+.tag{background:#fff8df;border-color:#d39b25;color:#926207}
+.hero{border-left:0;border-top:4px solid var(--accent);padding:25px 28px 27px;background:linear-gradient(135deg,#fff 0,#f3fff9 100%)}
+.hero h2{font-family:var(--sans);font-size:.74rem;font-weight:800;letter-spacing:.14em;color:#07835f;margin-bottom:14px}
+.hero .summary-headline{font-family:var(--sans);font-size:clamp(1.75rem,3.4vw,2.65rem);font-weight:650;letter-spacing:-.035em;line-height:1.08;max-width:880px;margin:0}
+.hero .summary-headline strong{font-weight:760;color:#07835f}
+.hero .summary-support{font-family:var(--sans);font-size:.96rem;font-weight:450;line-height:1.55;color:var(--muted);max-width:850px;margin:14px 0 0}
+.hero .summary-support b{color:var(--ink);font-weight:650}
+.hero .summary-foot{display:block;color:var(--muted);margin-top:16px;padding-top:13px;border-top:1px solid var(--rule);font-size:.76rem;line-height:1.5;max-width:900px}
+.section h2{font-family:var(--sans);font-size:1.58rem;font-weight:680;letter-spacing:-.035em}
+.metric{border-color:#dfeae7;background:#fff;border-radius:15px}
+.metric.strong{border-color:#62eabf;background:linear-gradient(135deg,#edfff8,#f8fffc)}
+.metric .value,.stage .big,.founder-card .v,.score,.dock-value,.dock-secondary .v{font-family:var(--sans);font-weight:650;letter-spacing:-.035em}
+.stage{border:1px solid #d8e7e2;border-radius:16px;background:#fff}
+.stage.mid{background:var(--accent-soft);border-color:#7fefce}
+.stage.end{border-color:#30dba8}
+.stage .name{color:#61706b}
+.arrow{color:#0d9d74;font-weight:700}
+.progress{background:#e5efeb}.progress span{background:linear-gradient(90deg,var(--accent-deep),var(--accent))}
+thead th{color:#67746f}
+.bartrack{background:#e4efeb}.barfill{background:linear-gradient(90deg,var(--accent-deep),var(--accent))}
+.internal-banner{background:#fff9e9;border-color:#e8c878;color:#61490b}
+.founder-card{border-color:#dce9e5;background:#fff}
+.pill.promising{color:#a36a00}.pill.high{color:#008c67}.pill.strategic{background:#0b0f0e;border-color:#0b0f0e;color:var(--accent)}
+.score-edit{background:#fff;border-color:#bfe1d6}.score-edit:focus{outline:2px solid rgba(39,229,173,.55)}
+.score-thresholds{border-color:#e5cc8d;background:#fff9e9}
+button.secondary{border-color:#cce2da;background:#fff;font-weight:650}
+button.secondary:hover{border-color:#76e7c4;background:#f2fff9}
+.savings-dock{background:rgba(8,12,11,.965);border:1px solid rgba(39,229,173,.28);border-radius:18px;box-shadow:0 18px 44px rgba(3,14,10,.18)}
+.dock-label{color:var(--accent);font-weight:800}
+.dock-context{color:#c7d8d2}.dock-secondary .k,.dock-note{color:#9eb4ac}
+.dock-value{color:#fff}.dock-secondary .v{color:#fff}
+.dock-secondary{border-left-color:rgba(39,229,173,.18)}
+.dock-note{border-top-color:rgba(39,229,173,.14)}
+.source-table a{color:#008b66;text-underline-offset:3px}
+.empty{border-color:#b9ddd1;background:#f7fffb}
+@media(max-width:600px){
+  .wrap{padding:18px 14px 52px}
+  .brandline{margin-bottom:16px}.brandcaption{display:none}
+  h1{font-size:clamp(2.8rem,17vw,4.2rem)}
+  .eyebrow{font-size:.62rem}
+}
+
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
-  <div class="eyebrow">U.S. market prototype</div>
+  <div class="brandline" aria-label="Cosysense inspired independent prototype"><span class="brandword">COSYSENSE</span><span class="branddot" aria-hidden="true"></span><span class="brandcaption">Independent prototype</span></div>
+  <div class="eyebrow">Physical AI · U.S. market prototype</div>
   <h1>Pilot to portfolio</h1>
   <p class="lede">An editable ROI and account-prioritization model for building automation. It is designed around one commercial story: pilot, verify value, then scale across the portfolio.</p>
   <p class="byline">Prepared independently by Tugce S King for discussion with Cosysense. Not an official Cosysense tool.</p>
@@ -246,7 +334,7 @@ function renderResults(){
  const info=scopeInfo(s), selected=reductionPct(s), y1=yearOneSavings(s), site=siteProjection(s,5), port=portfolioProjection(s,5), steadyAll=steady(s,info.targetSites), steadyPilot=steady(s,info.pilotSites), five=port[4].cumulative, three=port[2].cumulative, isPortfolio=s.scope==='portfolio', hasFee=feeEntered(s), sens=sensitivity(s), biggest=sens[0];
  const fullLabel=hasFee?'net customer savings':'modeled savings';
  const warning=feeWarning(s);
- let html=`<section class="hero card"><h2>Executive summary</h2><p>Based on the assumptions entered, one site has approximately <b>${money(hvacSpend(s))}</b> in annual HVAC-related electricity spend. At a <b>${pct(selected)}</b> modeled reduction, gross Year 1 savings are <b>${money(y1.total)}</b>.${isPortfolio?` At ${num(info.targetSites)} rollout sites, steady-state ${fullLabel} are approximately <b>${money(steadyAll.net)}</b> per year, with <b>${money(five)}</b> in modeled five-year ${hasFee?'net customer savings after the entered vendor fee':'savings'} after entered implementation costs.`:` Modeled five-year ${hasFee?'net customer savings':'savings'} is approximately <b>${money(site[4].cumulative)}</b>.`}</p><small>These are modeled estimates, not verified results. A real pilot should establish an agreed baseline and measurement methodology before rollout decisions.</small></section>`;
+ let html=`<section class="hero card"><h2>Executive summary</h2>${isPortfolio?`<p class="summary-headline">At full rollout, this portfolio models <strong>${money(steadyAll.net)}</strong> in annual ${hasFee?'net customer savings':'savings'}.</p><p class="summary-support">Across <b>${num(info.targetSites)} sites</b>, using a <b>${pct(selected)}</b> modeled HVAC reduction, the five-year modeled value is <b>${money(five)}</b>. One site represents approximately <b>${money(hvacSpend(s))}</b> in annual HVAC-related electricity spend under the current assumptions.</p>`:`<p class="summary-headline">This site models <strong>${money(y1.net)}</strong> in annual ${hasFee?'net customer savings':'savings'}.</p><p class="summary-support">Using a <b>${pct(selected)}</b> modeled HVAC reduction on approximately <b>${money(hvacSpend(s))}</b> in annual HVAC-related electricity spend, the five-year modeled value is <b>${money(site[4].cumulative)}</b>.</p>`}<small class="summary-foot">Modeled estimate, not a verified result. A real pilot should establish an agreed baseline and measurement methodology before any rollout decision.</small></section>`;
  if(warning)html+=`<div class="risk-banner"><b>Check commercial assumption:</b> ${warning}</div>`;
  if(isPortfolio){const pctPilot=Math.min(100,info.pilotSites/info.targetSites*100);html+=`<section class="section"><h2>Pilot → verify results → portfolio rollout</h2><p class="sub">The model deliberately keeps Year 1 as the pilot period, then ramps toward the selected portfolio size.</p><div class="stages"><div class="stage"><div class="name">Pilot</div><div class="big">${num(info.pilotSites)} sites</div><div>${money(steadyPilot.net)} modeled annual savings</div><div class="fine">Small enough to measure carefully.</div></div><div class="arrow">→</div><div class="stage mid"><div class="name">Verify pilot</div><div class="big">${money(steadyAll.netPerSite)}</div><div>modeled annual savings per site</div><div class="fine">Pilot target, not a result. Confirm measurement and verification (M&amp;V) before expansion.</div></div><div class="arrow">→</div><div class="stage end"><div class="name">Rollout</div><div class="big">${num(info.targetSites)} sites</div><div>${money(steadyAll.net)} steady-state annual modeled savings</div><div class="fine">Expansion only after the pilot proves the assumptions.</div></div></div><div class="progress"><span style="width:${pctPilot}%"></span></div></section>`}
  const valueLabel=hasFee?'net customer savings after entered vendor fee':'modeled savings before vendor fee';
